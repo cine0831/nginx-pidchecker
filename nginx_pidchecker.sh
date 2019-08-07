@@ -1,4 +1,5 @@
 #!/bin/bash
+# -*-Shell-script-*-
 #/**
 # * Title    : nginx process id checker
 # * Auther   : Alex, Lee
@@ -6,6 +7,9 @@
 # * Modified : 10-16-2018
 # * E-mail   : cine0831@gmail.com
 #**/
+
+#set -e
+#set -x
 
 _NGINX_PROC=$(ls -al /proc/$(ps aux | grep nginx | grep 'master pro' | grep root | egrep -v 'nobody|grep|bash|log|py' | awk '{print $2}') | grep 'exe' | awk 'NF>1{print $NF}')
 _NGINX_HOME=$(echo $_NGINX_PROC | sed -e 's/\/sbin\/nginx//g')
