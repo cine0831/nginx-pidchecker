@@ -19,7 +19,7 @@ _NGINX_PID_FILE="${_NGINX_LOG_FILE}/nginx.pid"
 _NGINX_PS=$(ps -ef | grep nginx | grep 'master process' | grep root | egrep -v 'nobody|grep|bash|log|py' | awk '{if ($3 == 1) print $2'})
 
 # log file checking
-_LOG_HOME="/usr/mgmt/nginx_pidchecker/logs"
+_LOG_HOME="/usr/local/nginx_pidchecker/logs"
 _LOG_FILE="$_LOG_HOME/pid_checker.log-$(date '+%Y%m%d')"
 
 if [ ! -d $_LOG_HOME ]; then
